@@ -1,51 +1,40 @@
-<?php
-	include "connect.php";
-?>
-
 <!DOCTYPE html>
 <html>
-	<head>
-  		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>Traitement de l'insertion</title>
-  	</head>
-  	<body>
-		<h1>Traitement de l'insertion : </h1>
-		<?php
-			if(isset($_POST['pseudo']
-				and $_POST['typeMoyenInfo']
-				and $_POST['os']
-				and $_POST['responsable']
-				and $_POST['proprietaire']
-				and $_POST['lienMachine'])
-			{
-				$pseudo = htmlspecialchars($_POST['pseudo'])
-				$typeMoyenInfo = htmlspecialchars($_POST['typeMoyenInfo'])
-				$os = htmlspecialchars($_POST['os'])
-				$responsable = htmlspecialchars($_POST['responsable'])
-				$proprietaire = htmlspecialchars($_POST['proprietaire'])
-				$lienMachine = htmlspecialchars($_POST['lienMachine'])
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Nouveau moyen informatique</title>
+    </head>
+    <body>        
+        <?php
+            include "connect.php";
+            $conn = fConnect();
 
-				$vConn = fConnect();
-				$vSql ="INSERT INTO 
-						; ";
-				$vQuery=pg_query($vConn, $vSql);
-				pg_close($vConn);
-			}
-			else
+            //récuperation des données du formulaire
+			$pseudo = $_POST['pseudo'];
+			$typeMoyenInfo = $_POST['typeMoyenInfo'];
+			$os = $_POST['os'];
+			$responsable = $_POST['responsable'];
+			$proprietaire = $_POST['proprietaire'];
+			$lienMachine = $_POST['lienMachine'];
+			$salle = $_POST['salle'];
+
+			$lien = false;
+			if($lienMachine == 't')
 			{
-				echo "<p>Les données du formulaire sont incorrectes</p>"
+				$lien = true;
 			}
-		?>
-	</body>
+
+            $sql = "INSERT INTO Moyens_Infos VALUES ($pseudo, '$typeMoyenInfo', '$os', '$responsable', '$proprietaire', '$lien', '$salle')";
+            $query = pg_query($conn, $sql);
+            if (!$query) {
+                echo "<h1> Erreur lors de l'insertion! </h1>";
+            }
+            else {
+                echo "<h1> Insertion réussie! </h1>";
+            }
+            pg_close($conn);
+        ?>
+        </form>
+        <a href="index.html"> Retour à l'accueil </a>
+    </body>
 </html>
-
-Nom VARCHAR(30) PRIMARY KEY,
-	Type typeinfo,
-	OS typeos,
-	Responsable VARCHAR(30),
-	Proprietaire VARCHAR(30),
-	Lien_Machine BOOL,
-	NomS VARCHAR(30) NOT NULL,
-	FOREIGN KEY (Responsable) REFERENCES Employe(Numero_Badge),
-	FOREIGN KEY (Proprietaire) REFERENCES Employe(Numero_Badge),
-	FOREIGN KEY (NomS) REFERENCES Salle(Nom)

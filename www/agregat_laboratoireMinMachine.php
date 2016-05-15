@@ -23,7 +23,6 @@
 					$vQuery=pg_query($vConn, $vSql);
 					while ($vResult = pg_fetch_array($vQuery))
 					{
-
 						echo "<p>Le laboratoire $result[0] ($result[1]) possède seulement $result[2] machine(s)</p>";
 					}
 					pg_close($vConn);

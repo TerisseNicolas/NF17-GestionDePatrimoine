@@ -74,6 +74,25 @@
            		<input type="radio" name="lienMachine" value="f" id="lienmachineFalse" /> <label for="lienMachineFalse">Faux</label>
 		    </p>
 		    <p>
+		       	<label for="salle">Salle :</label><br />
+		    	<select name="salle">
+		       <?php
+		       		$vConn = fConnect();
+		       		echo $vConn;
+					$vSql ="Select nom
+							FROM salle
+							ORDER by nom; ";
+					$vQuery=pg_query($vConn, $vSql);
+					while ($vResult = pg_fetch_array($vQuery))
+					{
+
+						echo "<option value=\"$result[0]\">$result[0]</option>";
+					}
+					pg_close($vConn);
+		       	?>
+		       	</select>
+		    </p>
+		    <p>
         		<input type="submit" value="Valider" >
     		</p>
     		<p>
