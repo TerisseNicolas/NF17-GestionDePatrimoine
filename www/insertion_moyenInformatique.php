@@ -1,3 +1,7 @@
+<?php
+	include "connect.php";
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -22,24 +26,45 @@
 		    <p>
 		       	<label for="os">OS :</label><br />
 		    	<select name="os">
-		        	<option value="w">Windows</option>
-		            <option value="l">Linux</option>
-		            <option value="m">Mac</option>
+		        	<option value="W">Windows</option>
+		            <option value="L">Linux</option>
+		            <option value="M">Mac</option>
 		       	</select>
 		    </p>
 		    <p>
 		       	<label for="responsable">Responsable :</label><br />
 		    	<select name="responsable">
 		       	<?php
-		       			echo "<option value="w">Windows</option> sur employé"
-		       	?>
+		       		$vConn = fConnect();
+                  $vSql ="Select numero_badge, nom, prenom
+                        FROM employe
+                        ORDER by nom; ";
+                  $vQuery=pg_query($vConn, $vSql);
+                  while ($vResult = pg_fetch_array($vQuery))
+                  {
+
+                     echo "<option value=\"$result[0]\">$result[1]  $result[2]</option>";
+                  }
+                  pg_close($vConn);
+                  ?>
 		       	</select>
 		    </p>
 		    <p>
 		       	<label for="proprietaire">Proprietaire :</label><br />
 		    	<select name="proprietaire">
-		       	<?php
-		       			echo "<option value="w">Windows</option> sur employé"
+		       <?php
+		       		$vConn = fConnect();
+		       		echo $vConn;
+					$vSql ="Select numero_badge, nom, prenom
+							FROM employe
+							ORDER by nom; ";
+					$vQuery=pg_query($vConn, $vSql);
+					while ($vResult = pg_fetch_array($vQuery))
+					{
+
+						echo "<option value=\"$result[0]\">$result[1]  $result[2]</option>";
+					}
+					pg_close($vConn);
 		       	?>
 		       	</select>
 		    </p>
@@ -51,6 +76,9 @@
 		    <p>
         		<input type="submit" value="Valider" >
     		</p>
+    		<p>
+			<a href="index.html">Accueil</a>
+		</p>
 		</form>
 	</body>
 </html>
