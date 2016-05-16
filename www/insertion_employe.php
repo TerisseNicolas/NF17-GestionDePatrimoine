@@ -9,7 +9,7 @@
         <form method="post" action="insertion_employe_traitement.php">
             <p>
                 <label for="num_badge">Numero badge :</label>
-                <input type="text" name="num_badge" size="30" maxlength="30" />
+                <input type="text" name="num_badge" size="30" maxlength="30" required/>
             </p>
             <p>
                 <label for="nom">Nom :</label>
@@ -37,7 +37,7 @@
                 <?php
                     include "connect.php";
                     $conn = fConnect();
-                    $sql = "SELECT nom FROM salle";
+                    $sql = "SELECT nom FROM salle"; //ne pas choisir de salle où la capacité est au max!
                     $query = pg_query($conn, $sql);
                     while ($result = pg_fetch_array($query)) {
                         echo "<option value=".$result['nom'].">".$result['nom']."</option>";
