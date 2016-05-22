@@ -17,7 +17,7 @@
             if (!$query) {
                 echo "<h1> Erreur lors de l'execution de la requete! </h1>";
             }
-            elseif (pg_num_rows($query) == 0) {
+            elseif (pg_num_rows($query) == 0) { //si la requete renvoie 0 lignes
                 echo "<h1> Aucun projet pour le departement ".$dpt[0].". </h1>";
             }
             else {

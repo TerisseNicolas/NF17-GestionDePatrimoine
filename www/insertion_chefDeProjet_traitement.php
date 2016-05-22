@@ -11,13 +11,9 @@
 
             //récuperation des données du formulaire
             $num_badge = $_POST['num_badge'];
-            $nom = $_POST['nom'];
-            $prenom = $_POST['prenom'];
-            $email = $_POST['email'];
-            $statut = $_POST['statut'];
-            $nom_salle = $_POST['nom_salle'];
+            $projet = $_POST['projet'];
 
-            $sql = "INSERT INTO employe VALUES ('$num_badge', '$nom', '$prenom', '$email', '$statut', '$nom_salle')";
+            $sql = "INSERT INTO chef_de_projet VALUES ('$num_badge', '$projet')";
             $query = pg_query($conn, $sql);
             if (!$query) {
                 echo "<h1> Erreur lors de l'insertion! </h1>";
