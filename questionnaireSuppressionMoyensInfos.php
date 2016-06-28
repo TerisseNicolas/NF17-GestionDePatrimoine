@@ -16,14 +16,14 @@
 
 		       	<?php
 		       		$vConn = fConnect();
-					$vSql ="SELECT nom, typeinfo 
+					$vSql ="SELECT nom, type 
 							FROM moyens_infos
 							ORDER by nom; ";
 					$vQuery=pg_query($vConn, $vSql);
-					while ($vResult = pg_fetch_array($vQuery))
+					while ($Result = pg_fetch_array($vQuery))
 					{
 
-						echo "<option value=\"$result[0]\">$result[0]  $result[1]</option>";
+						echo "<option value='".$Result['nom']."'>".$Result[0].$Result[1]."</option>";
 					}
 					pg_close($vConn);
 		       	?>

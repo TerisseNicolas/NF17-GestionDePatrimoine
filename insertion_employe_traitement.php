@@ -16,8 +16,9 @@
             $email = $_POST['email'];
             $statut = $_POST['statut'];
             $nom_salle = $_POST['nom_salle'];
+		
 
-            $sql = "INSERT INTO employe VALUES ('$num_badge', '$nom', '$prenom', '$email', '$statut', '$nom_salle')";
+    	    $sql = "INSERT INTO employe VALUES ('$num_badge', '$nom', '$prenom', '$email', '$statut', '$nom_salle')";
             $query = pg_query($conn, $sql);
             if (!$query) {
                 echo "<h1> Erreur lors de l'insertion! </h1>";
@@ -25,6 +26,11 @@
             else {
                 echo "<h1> Insertion réussie! </h1>";
             }
+
+
+
+
+            
             pg_close($conn);
         ?>
         </form>

@@ -5,21 +5,20 @@
 <html>
 	<head>
   		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>Nombre de membres pour chaque Département </title>
+		<title>Présence de membres dans le(s) Département(s) suivants </title>
   	</head>
   	<body>
-		<h1>Nombre de membres pour chaque Département :</h1>
+		<h1>Présence de membres dans le(s) Département(s) suivants :</h1>
 		<p>
 		
 		
 			<?php
 		       		$vConn = fConnect();
-					$vSql ="		SELECT nomD,COUNT(*)
-									FROM Membre
-									GROUP BY nomD;
-								";
+					$vSql ="SELECT nomD,COUNT(*)
+						FROM Membre
+						GROUP BY nomD;";
 					$vQuery=pg_query($vConn, $vSql);
-					while ($vResult = pg_fetch_array($vQuery))
+					while ($result = pg_fetch_array($vQuery))
 					{
 
 						echo "<p>Département: $result[0] .... $result[1] Membres dans ce Departement</p>";

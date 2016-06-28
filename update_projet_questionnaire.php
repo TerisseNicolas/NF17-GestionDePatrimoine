@@ -32,19 +32,19 @@
                 <label for="sigle">Sigle :</label>
                 <input type="text" name="sigle" size="30" maxlength="30"/>
             </p>
+            Si vous souhaitez modifier les dates de début et de fin entrez une descritpion
             <p>
-                <label for="description">Description existante :</label><br />
-                <select name="description" size=2>
-                <?php
-                    $sql = "SELECT description FROM Description"; 
-                    $query = pg_query($conn, $sql);
-                    while ($result = pg_fetch_array($query)) {
-                        echo "<option value='".$result['description']."'>".$result['description']."</option>";
-                    }
-                ?>
-                </select>
+                <label for="description">Description :</label><br />
+               <input type="text" name="description" size="30" maxlength="30" required/>
             </p>
             <p>
+                <label for="debut">Date de début :</label><br />
+               <input type="text" name="debut" size="30" maxlength="30" required/>
+            </p>
+            <p>
+                <label for="fin">Date de fin :</label><br />
+               <input type="text" name="fin" size="30" maxlength="30" required/>
+            </p>
             <p>
                 <label for="departement">Departement :</label><br />
                 <select name="departement" size=2>

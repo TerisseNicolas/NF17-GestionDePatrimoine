@@ -3,7 +3,7 @@
 		$host = "tuxa.sme.utc";
 		$dbName = "dbnf17p030";
 		$user = "nf17p030";
-		$pass = "XXXXXXXXX";
+		$pass = "XXXXXXX";
 		$port = "5432";
 
 		$db = "";

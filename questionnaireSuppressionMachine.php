@@ -20,10 +20,10 @@
 							FROM machine
 							ORDER by modele; ";
 					$vQuery=pg_query($vConn, $vSql);
-					while ($vResult = pg_fetch_array($vQuery))
+					while ($result = pg_fetch_array($vQuery))
 					{
 
-						echo "<option value=\"$result[0]\">$result[0]  $result[1]</option>";
+						echo "<option value='".$result[0]."'>".$result[0]." : ".$result[1]."</option>";
 					}
 					pg_close($vConn);
 		       	?>

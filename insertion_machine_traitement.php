@@ -10,28 +10,27 @@
             $conn = fConnect();
 
             //récuperation des données du formulaire
-			echo $modele = $_POST['modele'];
-			echo $numcontrat = $_POST['contrat'];
-			echo $des = $_POST['description'];
-			echo $pui = $_POST['puissance'];
-			echo $booltriphase = $_POST['triphase'];
-			echo $boolgaz = $_POST['gaz'];
-			echo $typegaz = $_POST['typegaz'];
-			echo $taille = $_POST['taille'];
-			echo $salle=$_POST['salle'];
+			$modele = $_POST['modele'];
+			$numcontrat = $_POST['contrat'];
+			$des = $_POST['description'];
+			$pui = $_POST['puissance'];
+			$booltriphase = $_POST['triphase'];
+			$boolgaz = $_POST['gaz'];
+			$typegaz = $_POST['typegaz'];
+			$taille = $_POST['taille'];
+			$salle=$_POST['salle'];
 			$labo = explode('|', $_POST['labo']); //on separe selon le delimiteur
-			echo $labo[0]."\n";
-			echo $labo[1];
-			$tryphaseres = FALSE;
+			
+			$tryphaseres = "FALSE";
 			if($booltriphase == 't')
 			{
-				$tryphaseres  = TRUE;
+				$tryphaseres  = "TRUE";
 			}
 			
-			$gazres = FALSE;
+			$gazres = "FALSE";
 			if($boolgaz == 't')
 			{
-				$gazres  = TRUE;
+				$gazres  = "TRUE";
 			}
 
 

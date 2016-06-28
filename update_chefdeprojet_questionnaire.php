@@ -7,11 +7,7 @@
     <body>
         <h1>Modification chef de projet :</h1>
         <br>
-        Voulez-vous changer le projet ou le chef de projet ?
         <form method="post" action="update_chefdeprojet_traitement.php">
-            <input type="radio" name="to_change" value="projet"> Projet<br>
-            <input type="radio" name="to_change" value="chef">Chef de Projet<br>
-
             <h2>Quel projet?</h2>
             <p>
                 <label for="nom_projet">Selectionnez un projet :</label><br />

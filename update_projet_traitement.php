@@ -33,10 +33,12 @@
         }
 
 
-
-
         $description=$_POST['description'];
+        $debut=$_POST['debut'];
+        $fin=$_POST['fin'];
         if(!empty($description)){
+        	$sql = "INSERT INTO description VALUES('$description','$debut','$fin');";
+            $query = pg_query($conn, $sql);
             $sql = "UPDATE projet SET description='$description' WHERE nom='$profil';";
             $query = pg_query($conn, $sql);
         }
@@ -52,15 +54,32 @@
             $sql = "UPDATE projet SET nom_salle='$nom_salle' WHERE nom='$profil';";
             $query = pg_query($conn, $sql);
         }
-        ?>
-        <h2>Nouveau profil : </h2>
-        <?php
+        $labo = $_POST['laboratoire'];
+        if(!empty($labo)){
+            $sql = "SELECT nom,sigle FROM laboratoire WHERE nom='$labo';";
+            $query = pg_query($conn, $sql);
+            while ($result = pg_fetch_array($query)) {
+                $sigle_labo=$result[1];
+            }
+            $sql = "UPDATE directeur SET nomL='$labo',sigleL='$sigle_labo' WHERE numero_badge='$profil';";
+            $query = pg_query($conn, $sql);
+        }
+        $departement = $_POST['departement'];
+        if(!empty($departement)){
+            $sql = "SELECT nom,sigle FROM departement WHERE nom='$departement';";
+            $query = pg_query($conn, $sql);
+            while ($result = pg_fetch_array($query)) {
+                $sigle_dep=$result[1];
+            }
+            $sql = "UPDATE directeur SET nomD='$departement',sigleD='$sigle_dep' WHERE numero_badge='$profil';";
+            $query = pg_query($conn, $sql);
+        }
         $sql = "SELECT * FROM projet WHERE nom='$profil';";
         $query = pg_query($conn, $sql);
         while ($result = pg_fetch_array($query)) {
-            echo $result[0]." ".$result[1]." ".$result[2]." ".$result[3]." ".$result[4]." ".$result[5];
+            echo $result[0]." ".$result[1]." ".$result[2]." ".$result[3]." ".$result[4]." ".$result[5]." ".$result[6];
         }
-
+        
         pg_close($conn);
         ?>
     </body>

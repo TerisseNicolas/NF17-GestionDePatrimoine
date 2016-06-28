@@ -13,12 +13,12 @@
 		       	<?php
 					require "connect.php";
                     $conn = fConnect();
-                    $sql = "SELECT num, nom, 
-							FROM poste_telephonique
-							ORDER by numero;";
+                    $sql = "SELECT numero,numero_direct 
+			    FROM poste_telephonique
+			    ORDER by numero;";
                     $query = pg_query($conn, $sql);
                     while ($result = pg_fetch_array($query)) {
-                        echo "<option value=".$result['num'].">".$result['num']." proprietaire ".$result['nom']."</option>";
+                        echo "<option value=".$result['numero'].">".$result['numero_direct']."</option>";
                     }
                     pg_close($conn);
 		       	?>
