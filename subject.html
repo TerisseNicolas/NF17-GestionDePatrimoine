@@ -1,0 +1,47 @@
+<head>
+  	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Gestion de patrimoine</title>
+</head>
+<body>
+	<h1>Gestion de patrimoine</h1>
+	<h3>Description générale</h3>
+<p>
+Vous avez été fraîchement recruté dans notre entreprise « Umbrella Corporation ». Nous sommes la première entreprise mondiale dans le secteur médical et cosmétique. On trouve nos produits dans plus de la moitié des foyers américains. Dans le cadre du développement de la Reine Rouge, notre système intelligent et autonome, nous avons identifié un besoin central pour la suite de nos ambitions. C'est dans ce cadre que nous lançons le projet : « Racoon Smart City ».<br> 
+Racoon Smart City devra permettre à notre société de gérer la totalité de son patrimoine humain, immobilier et industriel ; que ce soit pour les installations de recherche ou pour nos infrastructures de production.<br>
+Au nom de notre PDG et Fondateur, Ozwell E. Spencer, nous vous souhaitons réussite et bonne chance.
+</p>
+<h3>Liste non exhaustive des besoins identifiés par les architectes systèmes</h3>
+
+<p>
+Nous cherchons à gérer l'ensemble des bâtiments, des salles, des machines de fabrication et de laboratoire, des postes téléphoniques, des téléphones portables, des moyens informatiques, du personnel, des départements, des laboratoires (en terme d'entité, exemple : Arklay Laboratory qui se focalise sur la recherche génétique et virale), des départements, des équipes et des relations hiérarchiques entre le personnel de notre entreprise.<br>
+Chaque employé de notre société sera référencé dans le système, ainsi que chacune des entités susnommées.<br>
+Nous voulons pouvoir savoir à tout moment l'état de notre entreprise, pour cela un certain nombre de recherches sont souhaitables :<br>
+Quelles sont les personnes qui ne sont actuellement dans aucun projet ? (Comme toute entreprise, nous cherchons à réduire nos coûts)<br>
+Quelles personnes sont responsables de nombreux moyens informatiques ? (Il serait souhaitable d'éviter qu'une personne soit irremplaçable)<br>
+Qui cumule les postes de direction / responsable ? (Nous cherchons à prévenir le surmenage dans notre entreprise, des employés zombis ne nous intéressent pas).<br>
+Avons-nous des salles en sur-effectif ? (La sécurité est un soucis prioritaire sur nos installations)<br>
+Des suggestions ?
+</p>
+<h3>Hypothèses</h3>
+<p>
+Nous possédons plusieurs bâtiments dispersés sur plusieurs sites géographiques. Chaque bâtiment est identifié par un nom unique. Nous souhaitons lui associer au minimum les caractéristiques suivantes : Superficie, Localisation GPS, Plans de bâtiment (1 par étage), nombre d'étage, etc.
+Ces bâtiments sont composés de salles qui possèdent également un nom unique. Nous souhaitons avoir a minima les informations suivantes sur ces dernières : Superficie, Capacité humaine maximale, Photos, Plan de salle, Des caractéristiques techniques (arrivée air comprimé et gaz spécifique : Butane, Méthane, O2, Azote, etc., arrivée électrique triphasée, nombre de prises électriques, nombre de prises réseaux, etc.).<br>
+Dans ces salles on peut trouver :<br>
+Des employés qui possèdent un nom, prénom, numéro de badge, e-mail, statut employé (CDI, CDD, Stagiaire, etc.), emplacement du bureau (salle), etc.)
+Des machines de fabrication ou laboratoire qui possèdent un modèle, une description, une puissance électrique, besoin du triphasé ?, besoin réseau ?, numéro contrat maintenance, entreprise de maintenance, besoin d'un gaz spécifique ?,taille de la machine si grosse, etc.)
+Des postes téléphoniques qui possèdent un numéro interne unique et pouvant posséder un numéro direct depuis l'extérieur, VOIP/TOIP/Landline, modèle de téléphone, marque, qqn possède le téléphone ?, Si oui Qui ?, etc.)<br>
+Des moyens informatiques qui sont identifiés par un nom unique et peuvent être des PC fixes, portables ou serveurs. Quel OS ? Chacun ayant possiblement aucune ou plusieurs adresses MAC Wifi/Ethernet. Qui en est le responsable ?, ordinateur de projet ?, lié à une machine ?, ordinateur de fonction ? Si oui, de qui ?, etc.
+</p>
+<h3>Informations RH :</h3>
+<p>
+Relation Hiérarchique entre nos employés.
+Nos sites industriels sont organisés en Laboratoires qui sont des unités de recherche, chacun possède un directeur et des membres (on ne peut être membre que d'un seul Laboratoire à la fois), un nom et un sigle unique ainsi qu'un logo. Nous y trouvons également des thématiques d'étude (exemple : Microbiologie, Manipulation génétique, etc.).<br>
+En parallèle de ces Laboratoires, évoluent des Départements qui regroupent les différentes expertisent métier. Avec un nom de département et un sigle unique. Chaque département possède également son directeur et des membres (on ne peut être membre que d'un seul département à la fois). On trouvera également les domaines d'expertise de ce département (exemple : Microbiologie, Manipulation génétique, etc.).<br>
+Au sein d'un département et/ou d'un laboratoire, on trouve une multitude de Projets, qui possèdent un chef de projet et des acteurs. Chaque acteur ayant un rôle défini. Le projet possède une start_date, une end_date ainsi qu'une description. De manière similaire, chaque projet comporte un nom et un sigle unique.
+</p>
+<h3>Remarques</h3>
+<p>
+La totalité des fichiers images doit être stockée sur l'espace de stockage web, la base de données ne sauvegarde que le chemin complet du fichier.<br>
+Vous avez toute latitude pour mener à bien ce projet. La description précédemment fournie n'est qu'un exemple que nos ingénieurs ont pu mettre en évidence. Nous sommes cependant convaincus que les experts que vous êtes pourront, sans problème, affiner le besoin et l'enrichir et c'est en ce sens que nous avons recruté. L'avenir de ce projet repose sur vous. Ne pas hésiter à modifier la description si nécessaire.
+</p>
+</body>
